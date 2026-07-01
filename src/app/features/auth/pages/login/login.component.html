@@ -1,1 +1,7 @@
-<p>login works!</p>
+<div class="flex min-h-dvh items-center justify-center">
+    <div class="w-full max-w-md">
+        <app-card>
+            <app-login-form [loading]="loading()" [wrongCredentials]="wrongCredentials()" (login)="onLogin($event)"></app-login-form>
+        </app-card>
+    </div>
+</div>

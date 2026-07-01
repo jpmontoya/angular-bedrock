@@ -1,0 +1,28 @@
+<form [formGroup]="formLogin" (ngSubmit)="submit()" class="flex flex-col gap-4 items-center">
+    <span class="font-semibold">Iniciar Sesión en Bedrock</span>
+    <div class="w-full">
+        <label for="username" class="w-full font-semibold">Usuario</label>
+        <app-input id="username" class="w-full" placeholder="Usuario" formControlName="username"></app-input>
+    </div>
+    <div class="w-full">
+        <label for="username" class="w-full font-semibold">Contraseña</label>
+        <app-input id="password" type="password" class="w-full" placeholder="Contraseña"
+            formControlName="password"></app-input>
+    </div>
+
+    <div class="w-full overflow-hidden transition-all duration-1000 ease-in-out" [class.max-h-0]="!wrongCredentials()"
+        [class.opacity-0]="!wrongCredentials()" [class.py-0]="!wrongCredentials()" [class.max-h-20]="wrongCredentials()"
+        [class.opacity-100]="wrongCredentials()" [class.py-2]="wrongCredentials()">
+
+        <div class="bg-red-200 p-2 rounded-lg">
+            <span class="text-red-500">
+                Usuario o contraseña incorrectos.
+            </span>
+        </div>
+
+    </div>
+
+    <app-button type="submit" [disabled]="formLogin.invalid" [loading]="loading()">
+        Iniciar Sesión
+    </app-button>
+</form>

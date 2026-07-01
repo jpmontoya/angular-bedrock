@@ -147,6 +147,7 @@ Los componentes se dividen en dos tipos.
 ## Pages
 
 Representan una ruta dentro de la aplicación.
+Esta decide el layout (ancho, alto, posición, grid, flex, responsive).
 
 Ejemplo:
 

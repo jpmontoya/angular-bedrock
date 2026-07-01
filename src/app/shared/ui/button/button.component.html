@@ -1,0 +1,9 @@
+<button [type]="type()" [disabled]="disabled() || loading()"
+    class="rounded-lg px-4 py-2 font-medium transition-all cursor-pointer" [ngClass]="variant()"
+    [class.w-full]="fullWidth()">
+    @if(!loading()){
+        <ng-content />
+    }@else{
+        <lucide-icon [name]="icons.LoaderCircle" class="animate-spin"></lucide-icon>
+    }
+</button>
